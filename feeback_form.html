@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<title>FEEDBACK FORM</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Georgia">
+<style>
+body, html, h1, h5{
+  height: 100%;
+  font-family: "Georgia", sans-serif;
+  background-color:#c290b3;
+}
+
+.dropbtn {
+  background-color: #864372;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: rgb(96, 143, 182)}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #864372;
+}
+
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 99%;
+  padding: 10px;
+  border: 1px solid #a37495;
+  border-radius: 3px;
+  box-sizing: border-box;
+  margin-top: 2px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #bd69a4;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #c075a9;
+}
+.container {
+  border-radius: 5px;
+  background-color: #e2d5de;
+  padding: 10px;
+}
+</style>
+<body>
+   
+      
+    <div class="dropdown">
+      <button class="dropbtn">Menu</button>
+      <div class="dropdown-content">
+      <a href="index.html">About Myself</a>
+      <a href="photo_Gallery.html">Photo Gallery</a>
+      <a href="about_us.html">About Us</a>
+      <a href="about_Uitm.html">About UiTM</a>
+      <a href="feeback_form.html">Feedback Form</a>
+      </div>
+    </div>
+
+    <h3><center>FEEDBACK FORM</center></h3>
+    <div class="container w3-center">
+        <form name="myForm" action="index.html" onsubmit="return validateForm()" method="post">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="firstname" placeholder="Your name.."><br>
+
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lastname" placeholder="Your last name.."><br>
+
+          <label for="Age">Age</label>
+          <select id="Age" name="age">
+            <option value="13-19">13-19</option>
+            <option value="20-25">20-25</option>
+            <option value="26-30">26-20</option>
+            <option value="31-39">31-39</option>
+          </select>
+          <br>
+
+          <label for="subject">Feedback</label>
+          <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+          <input type="submit" value="Submit">
+        </form>
+        
+      </div>
+</body>
+<script>
+  function validateForm() {
+    let x = document.forms["myForm"]["fname"].value;
+    if (x == "") {
+      alert("Name must be filled out");
+      return false;
+    }
+    else{
+      alert("Successfuly submit");
+      return true
+    }
+  }
+  </script>
+</html>
